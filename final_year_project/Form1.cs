@@ -98,5 +98,10 @@ namespace final_year_project
                 passwordTxt.UseSystemPasswordChar = true;
             }
         }
+
+        private void usernameTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

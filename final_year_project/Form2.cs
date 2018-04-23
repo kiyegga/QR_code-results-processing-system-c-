@@ -58,7 +58,7 @@ namespace final_year_project
                 }
                 else
                 {
-                    MessageBox.Show("password does match");
+                    MessageBox.Show("password does not match");
                     password_txt.Focus();
                 }
             } catch (Exception ex)

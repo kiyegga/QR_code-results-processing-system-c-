@@ -167,6 +167,7 @@
             this.year_cm.Name = "year_cm";
             this.year_cm.Size = new System.Drawing.Size(140, 21);
             this.year_cm.TabIndex = 11;
+            this.year_cm.SelectedIndexChanged += new System.EventHandler(this.year_cm_SelectedIndexChanged);
             // 
             // term_cm
             // 

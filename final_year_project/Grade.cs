@@ -107,7 +107,7 @@ namespace final_year_project
                 else
                 {
                     DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter("select * from report_marks WHERE CLASS='"+this.class_cm.Text+ "' AND YEAR='"+this.year_cm.Text+ "' AND TERM='"+this.term_cm.Text+ "' AND SUBJECT='"+this.subject_cm.Text+ "'", con);
+                    MySqlDataAdapter da = new MySqlDataAdapter("select * from report_marks WHERE CLASS='" + this.class_cm.Text + "' AND YEAR='" + this.year_cm.Text + "' AND TERM='" + this.term_cm.Text + "' AND SUBJECT='" + this.subject_cm.Text + "'", con);
 
                     da.Fill(dt);
                     dataGridView1.DataSource = dt;
@@ -118,9 +118,51 @@ namespace final_year_project
                 MessageBox.Show(ex.Message + " No record Found");
 
             }
+
             finally
             {
                 con.Close();
+            }
+        }
+
+        private void browse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.DefaultExt = ".csv";
+            ofd.Filter = "comma separate(*.csv)|.csv*";
+            ofd.ShowDialog();
+            //browse_txt.Text = ofd.FileName;
+        }
+        private void import()
+        {
+            DataTable importedData;
+            try
+            {
+                //using (StreamReader sr = new StreamReader(browse_txt.Text))
+                //{
+                //    string header = sr.ReadLine();
+                //    if (string.IsNullOrEmpty(header))
+                //    {
+                //        MessageBox.Show("No file data");
+                //        return;
+                //    }
+
+                //    string[] headerColumns = header.Split(',');
+                    //foreach (string headerColumn in headerColumns)
+                    //{
+                    //    importedData.Columns.Add(headerColumn);
+
+                    //}
+                    //while (!sr EndOfStream)
+                    //    {
+                    //    string Line = sr.ReadLine();
+                    //}
+                //}
+            }
+            catch (Exception e)
+            {
+                //Console.WriteLine("No record found");
+                //Console.WriteLine(e.Message);
             }
         }
     }

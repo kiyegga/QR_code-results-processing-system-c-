@@ -78,6 +78,7 @@
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(173, 20);
             this.usernameTxt.TabIndex = 4;
+            this.usernameTxt.TextChanged += new System.EventHandler(this.usernameTxt_TextChanged);
             // 
             // passwordTxt
             // 

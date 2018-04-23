@@ -16,7 +16,6 @@ namespace final_year_project
     public partial class bio_data : Form
     {
         MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["connString"].ConnectionString);
-        //string MySqlConnection = "datasource=127.0.0.1;port=3306;username=root;password=;database=final_year_project";
         
         public bio_data()
         {
@@ -28,7 +27,6 @@ namespace final_year_project
              try
             {
                 string Query = "select * from Results_table WHERE STUDENT_NO LIKE '%"+ student_no_txt.Text + "%'";
-                //MySqlConnection con = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand = new MySqlCommand(Query, con);
                 MySqlDataReader MyReader2;
                 con.Open();
@@ -118,7 +116,7 @@ namespace final_year_project
                     MessageBox.Show("Enter exam type");
                     exam_type.Focus();
                 } else {
-                    string query = "insert into final_year_project.Results_table(STUDENT_NO, STUDENT_NAME, SUBJECT, MARKS,TERM,YEAR,CLASS,Exam_Type) VALUES ('" + this.student_no_txt.Text + "', '" + this.name_txt.Text + "', '" + this.subject_txt.Text + "', '" + this.marks_txt.Text + "','" + this.year_cm.Text + "','" + this.term_cm.Text + "','" + this.class_cm.Text + "',  '" + this.exam_type.Text + "');";
+                    string query = "insert into final_year_project.Results_table(STUDENT_NO, STUDENT_NAME, SUBJECT, MARKS,YEAR,TERM,CLASS,Exam_Type) VALUES ('" + this.student_no_txt.Text + "', '" + this.name_txt.Text + "', '" + this.subject_txt.Text + "', '" + this.marks_txt.Text + "','" + this.year_cm.Text + "','" + this.term_cm.Text + "','" + this.class_cm.Text + "',  '" + this.exam_type.Text + "');";
 
                     MySqlCommand commandDatabase = new MySqlCommand(query, con);
                     MySqlDataReader MyReader;
@@ -175,7 +173,6 @@ namespace final_year_project
             try
             {
                 string Query = "delete from final_year_project.Results_table where STUDENT_NO='" + this.student_no_txt.Text + "';";
-                //MySqlConnection con = new MySqlConnection(MyConnection2);
                 MySqlCommand MyCommand = new MySqlCommand(Query, con);
                 MySqlDataReader MyReader2;
                 con.Open();
@@ -247,6 +244,11 @@ namespace final_year_project
             {
                 fillcombo();
             }
+        }
+
+        private void year_cm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report_improved));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,6 +59,10 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.print_btn = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -155,7 +160,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(420, 612);
+            this.textBox9.Location = new System.Drawing.Point(420, 554);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 19;
@@ -164,7 +169,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(256, 612);
+            this.label6.Location = new System.Drawing.Point(256, 554);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(158, 20);
             this.label6.TabIndex = 20;
@@ -174,7 +179,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(526, 611);
+            this.label11.Location = new System.Drawing.Point(526, 553);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 20);
             this.label11.TabIndex = 21;
@@ -182,14 +187,14 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(614, 611);
+            this.textBox10.Location = new System.Drawing.Point(614, 553);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(173, 20);
             this.textBox10.TabIndex = 22;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(150, 611);
+            this.textBox11.Location = new System.Drawing.Point(150, 553);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 20);
             this.textBox11.TabIndex = 23;
@@ -198,7 +203,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(43, 609);
+            this.label12.Location = new System.Drawing.Point(43, 551);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 20);
             this.label12.TabIndex = 24;
@@ -208,7 +213,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(41, 648);
+            this.label13.Location = new System.Drawing.Point(41, 580);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(212, 20);
             this.label13.TabIndex = 25;
@@ -216,7 +221,7 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(254, 648);
+            this.textBox12.Location = new System.Drawing.Point(254, 580);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(534, 20);
             this.textBox12.TabIndex = 26;
@@ -231,9 +236,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 349);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 337);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(755, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(755, 214);
             this.dataGridView1.TabIndex = 33;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
@@ -319,7 +324,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(57, 682);
+            this.label14.Location = new System.Drawing.Point(57, 617);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(207, 20);
             this.label14.TabIndex = 28;
@@ -327,7 +332,7 @@
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(277, 684);
+            this.textBox13.Location = new System.Drawing.Point(260, 617);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(525, 20);
             this.textBox13.TabIndex = 27;
@@ -351,12 +356,48 @@
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // print_btn
+            // 
+            this.print_btn.Location = new System.Drawing.Point(699, 659);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(75, 23);
+            this.print_btn.TabIndex = 40;
+            this.print_btn.Text = "Print";
+            this.print_btn.UseVisualStyleBackColor = true;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(298, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(198, 225);
+            this.listBox1.TabIndex = 41;
+            this.listBox1.Visible = false;
+            // 
             // Report_improved
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(840, 749);
+            this.ClientSize = new System.Drawing.Size(840, 741);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.print_btn);
             this.Controls.Add(this.year_cm);
             this.Controls.Add(this.term_cm);
             this.Controls.Add(this.class_cm);
@@ -429,5 +470,9 @@
         private System.Windows.Forms.ComboBox year_cm;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox13;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button print_btn;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
